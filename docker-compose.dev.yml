@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  api:
+    build:
+      context: ./spring-demo-api
+      dockerfile: Dockerfile.dev
+    container_name: api
+    volumes:
+      - ./spring-demo-api:/app
+  web:
+    build:
+      context: ./next-demo-web
+      dockerfile: Dockerfile.dev
+    container_name: web
+    restart: always
+    volumes:
+      - ./next-demo-web:/app
+      - /app/node_modules
+      - /app/.next
+  nginx:
+    depends_on:
+      - web
+      - api
+    restart: always
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.dev
+    container_name: nginx
+    ports:
+      - "5000:5000"
