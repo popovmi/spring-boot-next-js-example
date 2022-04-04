@@ -1,0 +1,13 @@
+{
+	"recommendations": [
+		"vscjava.vscode-java-debug",
+		"redhat.fabric8-analytics",
+		"ms-azuretools.vscode-docker",
+		"vscjava.vscode-java-pack",
+		"redhat.java",
+		"gabrielbb.vscode-lombok",
+		"vscjava.vscode-maven",
+		"vscjava.vscode-java-dependency",
+		"redhat.vscode-commons"
+	]
+}
